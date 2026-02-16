@@ -1,0 +1,20 @@
+service:
+  name: webapp
+  identifier: webapp
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: docker
+                imagePath: adisenpai/webapps
+                tag: <+input>
+                digest: ""
+              identifier: webapp_image
+              type: DockerRegistry
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: default_project
