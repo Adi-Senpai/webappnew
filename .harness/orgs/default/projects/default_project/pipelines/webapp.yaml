@@ -54,3 +54,4 @@ pipeline:
                       pip install --upgrade pip 
                       pip3 install flask
                       flask --app main.py run --host "0.0.0.0"
+                  timeout: 1m
